@@ -1,3 +1,4 @@
+package mypackagejava;
 import java.util.Scanner;
 
 
@@ -6,26 +7,33 @@ public class EE47 {
 	private static int[] rightNumber=new int[10];
 	private static int[] userAnswer=new int[10];
 	
+	/**
+	 * initialise un quiz avec des valeurs comprises entre 0 et 99 pour les membres des additions
+	 */
 	public static void createQuiz() {
-		for(int i=0;i<10;i++) { //on choisit des entiers entre 0 et 99 pour les membres de l'addition 
+		for(int i=0;i<10;i++) {  
 			leftNumber[i]=(int)(Math.random()*100);
 			rightNumber[i]=(int)(Math.random()*100);
 		}
 	}
 	
+	/**
+	 * pose les 10 questions du quiz à l'utilisateur et récupère les réponses
+	 */
 	public static void adminQuiz() {
 		int nbQuestion=0;
 		Scanner scn=new Scanner(System.in);
 		for(int i=0;i<10;i++) {
 			nbQuestion++;
 			System.out.println("Question "+nbQuestion+": "+leftNumber[i]+" + "+rightNumber[i]+" ?");
-			//Scanner scn=new Scanner(System.in);
 			userAnswer[i]=Integer.parseInt(scn.nextLine());
-			//scn.close();
 		}
 		scn.close();
 	}
 	
+	/**
+	 * Corrige le quiz et affiche les scores
+	 */
 	public static void gradeQuiz() {
 		int grade=0;
 		int nbQuestion=0;

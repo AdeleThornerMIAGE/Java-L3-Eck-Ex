@@ -1,6 +1,13 @@
+package mypackagejava;
+
 
 public class EE43 {
 
+	/**
+	 * numberOfRolls compte le nombre de lancers de deux dés nécessaires pour obtenir leur somme égale à nb.
+	 * @param nb
+	 * @return le nombre de lancers de deux dés nécessaires pour obtenir leur somme égale à nb
+	 */
 	public static int numberOfRolls(int nb) {
 		if(nb<2 || nb>12) {
 			throw new IllegalArgumentException("La somme de deux dés est comprise entre 2 et 12");
@@ -8,7 +15,7 @@ public class EE43 {
 		else {
 			int dice1=0;
 			int dice2=0;
-			boolean nbFound=false; //nbFound devient vrai quand on a trouvé le nb en paramètre
+			boolean nbFound=false;
 			int counter=0;
 			while(!nbFound) {
 				counter++;
